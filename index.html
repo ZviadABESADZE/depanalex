@@ -6,19 +6,20 @@
     <title>Dépannage Auto</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+</script>
 
 <body>
 
     <header>
         <h1 class="hidden">Dépannage Alex&Léo 24/7</h1>
-        <!-- Menu Hamburger -->
-        <button class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <!-- Menu principal -->
-        <nav class="menu">
+        <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -26,7 +27,11 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776; <!-- Burger Icon -->
+        </div>
     </header>
+    
 
     <section class="hero hidden">
         <h2>Bienvenue sur notre site de Dépannage Auto</h2>
