@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépannage Auto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="hidden">Dépannage Alex&Léo 24/7</h1>
+        <nav class="hidden">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero hidden">
+        <h2>Bienvenue sur notre site de Dépannage Auto</h2>
+        <p>Service rapide et efficace 24h/24 et 7j/7.</p>
+    </section>
+
+    <section class="content">
+        <div class="row hidden">
+            <div class="image-container">
+                <img src="images/depanage2.webp" alt="Dépannage sur autoroute">
+            </div>
+            <div class="text-container">
+                <h2>Intervention rapide sur autoroute</h2>
+                <p>🚗 Service de Dépannage 24/7
+                    Votre véhicule est en panne sur la route ? Pas de panique ! Notre service de dépannage est disponible 24h/24 et 7j/7 pour 
+                    intervenir rapidement. Que ce soit pour une panne mécanique, une batterie déchargée ou un pneu crevé, nos équipes sont équipées 
+                    pour vous remettre sur la route en toute sécurité. Contactez-nous dès maintenant pour une assistance rapide et efficace !
+                </p>
+            </div>
+        </div>
+
+        <div class="row reverse hidden">
+            <div class="text-container">
+                <h2>Assistance par tous les temps</h2>
+                <p>🚗 Service de Dépannage 24/7 Votre véhicule est en panne sur la route ? Pas de panique ! Notre service de 
+                    dépannage est disponible 24h/24 et 7j/7 pour intervenir rapidement. Que ce soit pour une panne mécanique, une batterie 
+                    déchargée ou un pneu crevé, nos équipes sont équipées pour vous remettre sur la route en toute sécurité. Contactez-nous 
+                    dès maintenant pour une assistance rapide et efficace !
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="images/depanage3.webp" alt="Assistance sous la pluie">
+            </div>
+        </div>
+
+        <div class="row hidden">
+            <div class="image-container">
+                <img src="images/depanage4.webp" alt="Dépannage en ville">
+            </div>
+            <div class="text-container">
+                <h2>Dépannage en centre-ville</h2>
+                <p>Nous intervenons aussi en milieu urbain pour remorquer et assister les véhicules en panne, même dans les endroits les plus difficiles d'accès.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder" class="hidden"></div>
+
+    <script>
+        // Chargement du footer
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+                document.getElementById("footer-placeholder").classList.add("show");
+                console.log("Footer ajouté avec succès !");
+            })
+            .catch(error => {
+                console.error("Erreur lors du chargement du footer :", error);
+            });
+
+            // Animation au défilement
+            const hiddenElements = document.querySelectorAll(".hidden");
+
+            function checkScroll() {
+                hiddenElements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add("show");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); // Vérifie au chargement de la page
+        });
+    </script>
+
+</body>
+</html>

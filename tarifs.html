@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Tarifs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nos Tarifs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Tarifs de nos services</h2>
+        <table border="1">
+            <tr>
+                <th>Service</th>
+                <th>Prix</th>
+            </tr>
+            <tr>
+                <td>Dépannage simple</td>
+                <td>50€</td>
+            </tr>
+            <tr>
+                <td>Remorquage</td>
+                <td>100€</td>
+            </tr>
+            <tr>
+                <td>Assistance 24/7</td>
+                <td>150€</td>
+            </tr>
+        </table>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch("footer.html")
+        .then(response => {
+            console.log("Fetching footer.html...");
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+            console.log("Footer ajouté avec succès !");
+        })
+        .catch(error => {
+            console.error("Erreur lors du chargement du footer :", error);
+        });
+    </script>
+    
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,347 @@
+/* RESET GÉNÉRAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* STYLE DU CORPS DU SITE */
+body {
+    background-color: white;
+    color: #333;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    background-color: #c4b812;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: #c4b812;
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #2d14be;
+    border-radius: 5px;
+}
+
+/* STYLE DES SECTIONS GÉNÉRALES */
+section {
+    padding: 40px;
+    text-align: center;
+    background: white;
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* TABLEAU TARIFS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2d14be;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative; /* Evite qu'il cache du contenu */
+    width: 100%;
+    margin-top: 50px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #e74c3c;
+}
+
+/* Icônes des réseaux sociaux */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* HERO SECTION (Image de fond en haut) */
+.hero {
+    background-image: url('images/depanage1.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+}
+
+/* CONTENU PRINCIPAL */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px;
+}
+
+/* GRILLE POUR LES SECTIONS D'IMAGES ET TEXTES */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+.text-container {
+    padding: 20px;
+}
+
+/* PAGE CONTACT - Style amélioré */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f8f9fa;
+}
+
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-box h2 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* INFO CONTACT */
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-info a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #000000;
+}
+
+/* FORMULAIRE */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* CHAMPS DE FORMULAIRE */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(45, 20, 190, 0.3);
+}
+
+/* BOUTON FORMULAIRE */
+button {
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1a0c8a;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    section {
+        max-width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .contact-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Animation d’apparition */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
