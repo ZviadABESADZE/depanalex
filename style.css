@@ -23,7 +23,7 @@ header {
 }
 
 /* Style du menu hamburger */
-.hamburger {
+.menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -34,7 +34,7 @@ header {
     cursor: pointer;
 }
 
-.hamburger span {
+.menu-toggle span {
     width: 30px;
     height: 3px;
     background-color: white;
@@ -42,18 +42,17 @@ header {
 }
 
 /* Menu déroulant sur mobile */
-.menu {
+.nav-menu {
     display: none;  /* Cache le menu par défaut */
     flex-direction: column;
     width: 100%;
     text-align: center;
 }
 
-.menu.active {
+.nav-menu.active {
     display: flex;  /* Affiche le menu quand il est activé */
 }
 
-/* Style des éléments de navigation */
 nav ul {
     list-style: none;
     padding: 15px 0;
@@ -86,8 +85,11 @@ nav ul li a:hover {
 
 /* Style pour l'icône du hamburger sur mobile */
 @media (max-width: 768px) {
-    .hamburger {
+    .menu-toggle {
         display: flex;
+        position: absolute;
+        top: 25px;
+        right: 20px;
     }
 
     nav ul {
@@ -99,123 +101,20 @@ nav ul li a:hover {
         max-width: 90%;
     }
 
-    /* Menu affiché sur mobile */
-    nav ul {
+    .nav-menu {
         display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
 
+    .nav-menu.active {
+        display: block; /* Affiche le menu quand il est activé */
+    }
+
     nav ul li {
         padding: 10px 0;
     }
-
-    .menu.active {
-        display: block; /* Affiche le menu quand il est activé */
-    }
-}
-
-/* STYLE DES SECTIONS GÉNÉRALES */
-section {
-    padding: 40px;
-    text-align: center;
-    background: white;
-    max-width: 80%;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* TABLEAU TARIFS */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #2d14be;
-    color: white;
-}
-
-/* FOOTER */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    margin-top: 50px;
-    animation: fadeInUp 1.2s ease-in-out;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-    text-align: left;
-}
-
-.footer-section h3 {
-    border-bottom: 2px solid #e74c3c;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin: 8px 0;
-}
-
-.footer-section a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: #e74c3c;
-}
-
-/* Icônes des réseaux sociaux */
-.social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    filter: invert(1);
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover img {
-    transform: scale(1.1);
-}
-
-.footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.7;
 }
 
 /* HERO SECTION (Image de fond en haut) */

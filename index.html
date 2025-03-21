@@ -6,19 +6,15 @@
     <title>Dépannage Auto</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.querySelector("nav ul");
-
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-    });
-</script>
 
 <body>
 
     <header>
-        <h1 class="hidden">Dépannage Alex&Léo 24/7</h1>
+        <h1>Dépannage Alex&Léo 24/7</h1>
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776; <!-- Burger Icon -->
+        </div>
+
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -27,19 +23,16 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="menu-toggle">
-            &#9776; <!-- Burger Icon -->
-        </div>
     </header>
     
 
-    <section class="hero hidden">
+    <section class="hero">
         <h2>Bienvenue sur notre site de Dépannage Auto</h2>
         <p>Service rapide et efficace 24h/24 et 7j/7.</p>
     </section>
 
     <section class="content">
-        <div class="row hidden">
+        <div class="row">
             <div class="image-container">
                 <img src="images/depanage2.webp" alt="Dépannage sur autoroute">
             </div>
@@ -53,7 +46,7 @@
             </div>
         </div>
 
-        <div class="row reverse hidden">
+        <div class="row reverse">
             <div class="text-container">
                 <h2>Assistance par tous les temps</h2>
                 <p>🚗 Service de Dépannage 24/7 Votre véhicule est en panne sur la route ? Pas de panique ! Notre service de 
@@ -67,7 +60,7 @@
             </div>
         </div>
 
-        <div class="row hidden">
+        <div class="row">
             <div class="image-container">
                 <img src="images/depanage4.webp" alt="Dépannage en ville">
             </div>
@@ -79,7 +72,7 @@
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder" class="hidden"></div>
+    <div id="footer-placeholder"></div>
 
     <script>
         // Chargement du footer
@@ -88,48 +81,21 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById("footer-placeholder").innerHTML = data;
-                document.getElementById("footer-placeholder").classList.add("show");
-                console.log("Footer ajouté avec succès !");
             })
-            .catch(error => {
-                console.error("Erreur lors du chargement du footer :", error);
-            });
-
-            // Animation au défilement
-            const hiddenElements = document.querySelectorAll(".hidden");
-
-            function checkScroll() {
-                hiddenElements.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100) {
-                        el.classList.add("show");
-                    }
-                });
-            }
-
-            window.addEventListener("scroll", checkScroll);
-            checkScroll(); // Vérifie au chargement de la page
+            .catch(error => console.error("Erreur lors du chargement du footer :", error));
         });
 
         // Fonction pour activer/désactiver le menu
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById("menu-toggle");
+            const menu = document.querySelector(".nav-menu");
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const hamburger = document.querySelector(".hamburger");
-        const menu = document.querySelector(".menu");
-
-        // Fonction pour ouvrir/fermer le menu
-        hamburger.addEventListener("click", () => {
-            menu.classList.toggle("active");
+            // Fonction pour ouvrir/fermer le menu
+            hamburger.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
         });
-    });
-</script>
-
+    </script>
 
 </body>
 </html>
