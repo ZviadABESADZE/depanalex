@@ -11,7 +11,14 @@
 
     <header>
         <h1 class="hidden">Dépannage Alex&Léo 24/7</h1>
-        <nav class="hidden">
+        <!-- Menu Hamburger -->
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- Menu principal -->
+        <nav class="menu">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -98,6 +105,12 @@
             window.addEventListener("scroll", checkScroll);
             checkScroll(); // Vérifie au chargement de la page
         });
+
+        // Fonction pour activer/désactiver le menu
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
     </script>
 
 </body>

@@ -22,13 +22,45 @@ header {
     text-align: center;
 }
 
+/* Style du menu hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Menu déroulant sur mobile */
+.menu {
+    display: none;  /* Cache le menu par défaut */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.menu.active {
+    display: flex;  /* Affiche le menu quand il est activé */
+}
+
+/* Style des éléments de navigation */
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    background-color: #000000;
     padding: 15px 0;
+}
+
+nav ul li {
+    padding: 10px 15px;
 }
 
 nav ul li a {
@@ -36,7 +68,6 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    padding: 10px 15px;
     transition: 0.3s;
 }
 
@@ -44,6 +75,22 @@ nav ul li a:hover {
     background-color: white;
     color: #2d14be;
     border-radius: 5px;
+}
+
+/* Style pour l'icône du hamburger sur mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        max-width: 90%;
+    }
 }
 
 /* STYLE DES SECTIONS GÉNÉRALES */
@@ -81,7 +128,7 @@ footer {
     color: white;
     padding: 40px 20px;
     text-align: center;
-    position: relative; /* Evite qu'il cache du contenu */
+    position: relative;
     width: 100%;
     margin-top: 50px;
     animation: fadeInUp 1.2s ease-in-out;
@@ -300,14 +347,12 @@ button:hover {
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    .menu {
+        display: none;
     }
 
-    section {
-        max-width: 90%;
+    .menu.active {
+        display: flex;
     }
 
     .footer-container {
